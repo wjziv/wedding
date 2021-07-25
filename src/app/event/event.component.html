@@ -1,0 +1,104 @@
+<section class="event-section">
+    <div fxLayout="row wrap" fxLayoutAlign="center" fxFlexFill>
+        <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" class="flex-item focus">
+            <mat-card>
+                <mat-card-title> {{ event.name }} @ {{ event.location.venue }} </mat-card-title>
+                <mat-card-content>
+                    <h2> {{ event.start_datetime | date:'short' }} - {{ event.end_datetime | date:'shortTime' }}</h2>
+                    <p class="event-description">
+                        <a href="{{ event.location.gmaps }}" target="_blank"> {{ event.location.address }} </a>
+                    </p>
+                    <img mat-card-image src="{{ event.background }}" alt="Entrance">
+                    <p class="event-description"> {{ event.description }} </p>
+                </mat-card-content>
+                <mat-card-actions align='end'>
+                    <button mat-raised-button color="primary" (click)='addToCalendar()' target="_blank"> Add to Calendar </button>
+                    <button mat-raised-button (click)='bookRide()' target="_blank"> Get an Uber </button>
+                </mat-card-actions>
+            </mat-card>
+        </div>
+    </div>
+
+    <div class="event-details" fxFlexAlign="center" fxLayout="row wrap" fxLayoutAlign="space-around center">
+
+        <div fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="100%" class="flex-item event-card">
+            <mat-card>
+                <mat-card-title> Dress Code </mat-card-title>
+                <mat-card-content>
+                    <p> {{ event.dresscode }} </p>
+                </mat-card-content>
+                <mat-divider inset="true"></mat-divider>
+                <br>
+                <mat-card-title> Gifts </mat-card-title>
+                <mat-card-content>
+                    <p> {{ event.gifts }} </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="100%" class="flex-item event-card">
+            <mat-card>
+                <mat-card-title> Stays </mat-card-title>
+                <mat-card-content>
+                    <p class="blurb">If you're coming in from out of town, here are our recommendations!</p>
+                    <p *ngFor="let stay of event.stays">
+                        <a href="{{ stay.link }}" target="_blank">{{ stay.name }}</a>
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="100%" class="flex-item event-card">
+            <mat-card>
+                <mat-card-title> Things to Do </mat-card-title>
+                <mat-card-content>
+                    <p class="blurb">Have some time before/after the party?</p>
+                    <p *ngFor="let thing of event.things">
+                        {{ thing }}
+                    </p>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+    </div>
+</section>
+
+
+<section class='rsvp'>
+    <h1 class="shadow"> Sounds Like A Great Time? </h1>
+    <h2> We'd love to see you there!</h2>
+    <div class="">
+        <form id="rsvp-form" [formGroup]="rsvpForm" (ngSubmit)="onSubmit()">
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label for="name">Name</mat-label>
+                    <input matInput placeholder="FirstName LastName" type="text" id="name" formControlName="name" required>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label for="email">Email Address</mat-label>
+                    <input matInput placeholder="user@example.com" type="email" id="email" formControlName="email" email="true" required>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label for="rsvp">RSVP</mat-label>
+                    <mat-select type="text" id="rsvp" formControlName="rsvp" required>
+                        <mat-option value='yes'> Yes! </mat-option>
+                        <mat-option value='no'> No :( </mat-option>
+                    </mat-select>
+                </mat-form-field>
+                <mat-form-field appearance="fill">
+                    <mat-label for="song">Playlist Suggestion?</mat-label>
+                    <input matInput placeholder="Don't Stop Believin': Journey!" type="text" id="song" formControlName="song" >
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field appearance="fill">
+                    <mat-label for="notes">Notes</mat-label>
+                    <input matInput placeholder="I can't wait to party!!" type="text" id="notes" formControlName="notes" >
+                </mat-form-field>
+            </div>
+            <button mat-raised-button color="primary" type="submit" form="rsvp" (click)="onSubmit()"> RSVP </button>
+        </form>
+    </div>
+</section>
