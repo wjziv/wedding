@@ -20,7 +20,7 @@ export class EventComponent {
     const config: CalendarOptions = {
       title: 'Walter & Nicole\'s ' + this.event.name,
       location: this.event.location.address,
-      description: 'Let\'s celebrate with SO MUCH BOOZE.',
+      description: 'Let\'s celebrate!',
       start: new Date(this.event.start_datetime),
       end: new Date(this.event.end_datetime)
     }
