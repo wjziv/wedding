@@ -1,7 +1,7 @@
 <section class="event-section">
     <div fxLayout="row wrap" fxLayoutAlign="center" fxFlexFill>
         <div fxFlex="50%" fxFlex.xs="100%" fxFlex.sm="100%" class="flex-item focus">
-            <mat-card>
+            <mat-card class="mat-elevation-z10">
                 <mat-card-title> {{ event.name }} @ {{ event.location.venue }} </mat-card-title>
                 <mat-card-content>
                     <h2> {{ event.start_datetime | date:'short' }} - {{ event.end_datetime | date:'shortTime' }}</h2>
@@ -22,7 +22,7 @@
     <div class="event-details" fxFlexAlign="center" fxLayout="row wrap" fxLayoutAlign="space-around center">
 
         <div fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="100%" class="flex-item event-card">
-            <mat-card>
+            <mat-card class="mat-elevation-z6">
                 <mat-card-title> Dress Code </mat-card-title>
                 <mat-card-content>
                     <p> {{ event.dresscode }} </p>
@@ -37,7 +37,7 @@
         </div>
 
         <div fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="100%" class="flex-item event-card">
-            <mat-card>
+            <mat-card class="mat-elevation-z6">
                 <mat-card-title> Stays </mat-card-title>
                 <mat-card-content>
                     <p class="blurb">If you're coming in from out of town, here are our recommendations!</p>
@@ -49,7 +49,7 @@
         </div>
 
         <div fxFlex="31%" fxFlex.xs="100%" fxFlex.sm="100%" class="flex-item event-card">
-            <mat-card>
+            <mat-card class="mat-elevation-z6">
                 <mat-card-title> Things to Do </mat-card-title>
                 <mat-card-content>
                     <p class="blurb">Have some time before/after the party?</p>
@@ -98,7 +98,7 @@
                     <input matInput placeholder="I can't wait to party!!" type="text" id="notes" formControlName="notes" >
                 </mat-form-field>
             </div>
-            <button mat-raised-button color="primary" type="submit" form="rsvp" (click)="onSubmit()"> RSVP </button>
+            <button id="rsvp-button" mat-raised-button color="primary" type="submit" form="rsvp" (click)="onSubmit()"> RSVP </button>
         </form>
     </div>
 </section>
