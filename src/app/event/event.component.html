@@ -11,7 +11,7 @@
                     <img mat-card-image src="{{ event.background }}" alt="Entrance">
                     <p class="event-description"> {{ event.description }} </p>
                 </mat-card-content>
-                <mat-card-actions align='end'>
+                <mat-card-actions>
                     <button mat-raised-button color="primary" (click)='addToCalendar()' target="_blank"> Add to Calendar </button>
                     <button mat-raised-button (click)='bookRide()' target="_blank"> Get an Uber </button>
                 </mat-card-actions>
