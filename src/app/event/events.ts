@@ -54,7 +54,7 @@ export const engagementParty = {
             link: 'https://www.stewarthotelnyc.com/'
         }
     ],
-    dresscode: 'Dress for Joy! Whatever you\'re most comfortable in works, but we suggest cocktail attire.',
+    dresscode: 'Dress for Joy! Whatever you\'re most comfortable in works, but we suggest semi-formal or cocktail attire.',
     gifts: 'Gifts are not expected, but if you\'d like to get the couple anything, they suggest something small like a cookbook or a bottle to stock their bar.',
     things: [
         'Grab delicious pudding at Magnolia Bakery',
