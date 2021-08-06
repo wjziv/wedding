@@ -4,7 +4,7 @@
             <mat-card class="mat-elevation-z10">
                 <mat-card-title> {{ event.name }} @ {{ event.location.venue }} </mat-card-title>
                 <mat-card-content>
-                    <h2> {{ event.start_datetime | date:'short' }} - {{ event.end_datetime | date:'shortTime' }}</h2>
+                    <h2> {{ event.start_datetime | date:'short' }} - {{ event.end_datetime | date:'shortTime' }} ET</h2>
                     <p class="event-description">
                         <a href="{{ event.location.gmaps }}" target="_blank"> {{ event.location.address }} </a>
                     </p>
