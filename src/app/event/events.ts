@@ -21,7 +21,7 @@ export interface Event {
 
 export const engagementParty = {
     name: 'Engagement Party',
-    description: "Open bar & Snacks! It's hosted in a real speakeasy!\r\nDon't miss the entrance, shown above. Just head down the alley and the stairs to the door are straight ahead!",
+    description: "Open bar & Snacks! It's hosted in a real speakeasy!\r\nDon't miss the entrance, shown above. Just head down the alley and the stairs to the door are straight ahead!<br>Remember, NYC <a href=\"https://www1.nyc.gov/site/doh/covid/covid-19-main.page\">requires vaccination</a> to enter indoor bars and restaurants.",
     background: 'https://nthp-savingplaces.s3.amazonaws.com/2015/11/24/15/28/22/951/backroom_LES-sign_Troy-Hahn.jpg',
     start_datetime: '2021-09-25T14:00:00-04:00',
     end_datetime: '2021-09-25T17:00:00-04:00',
